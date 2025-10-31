@@ -1,0 +1,14 @@
+1 AWSTemplateFormatVersion: '2010-09-09'
+Description: Criação de instância EC2 Ubuntu 24.04 via CloudFormation
+
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      # ID da AMI para Ubuntu Server 24.04 LTS (Verificada na região us-east-1)
+      ImageId: ami-0360c520857e3138f 
+      InstanceType: t3.micro
+      # Nome do par de chaves criado no console AWS, essencial para o acesso SSH
+      KeyName: my-first-key
+      # NOTA: O Grupo de Segurança e a Sub-rede foram implicitamente definidos 
+      # pelo VPC padrão no momento da execução deste template.
